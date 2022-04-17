@@ -12,10 +12,25 @@ let validConfirmSenha = false
 
 function cadastrar () {
     if (validNome && validSenha && validConfirmSenha == true) {
-        alert('Cadastro realizado com sucesso!')
-    } else
-        alert('Verifique as informações')
+        let listaUser = JSON.parse (localStorage.getItem('listaUser') || '[]')
+        
+        listaUser.push(
+        {
+            nomeCad: nome.value,
+            userCad: email.value,
+            senhaCad: senha.value
+        }
+        )
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+        location.href = 'https://new-petshop.vercel.app/pages/login.html'   
+        
+    }
+  
 }
+
+
+
+
 
 nome.addEventListener('keyup', () => {
     if (nome.value.length <= 3){
@@ -32,9 +47,9 @@ nome.addEventListener('keyup', () => {
 })
 
 senha.addEventListener('keyup', () => {
-    if (senha.value.length <= 3){
+    if (senha.value.length <= 5){
         labelSenha.setAttribute('style', 'color: red')
-        labelSenha.innerHTML = 'Insira no mínimo 4 caracteres'
+        labelSenha.innerHTML = 'Insira no mínimo 6 caracteres'
         senha.setAttribute('style', 'border-color: red')
         validSenha = false
     } else {
