@@ -1,0 +1,11 @@
+.form-control {padding: 8px; border-radius: 0.5em; margin: 5px;}
+
+.form-check {text-align: left; margin-left: 5px;}
+#campo {margin: 0px; margin-bottom: 0px;}
+    
+#jumbo {padding-top: 60px; color: rgb(83, 45, 45); margin-bottom: 60px;}
+#img_contato{max-width: 100px; max-height: 200px;}
+#entre_contato {margin-bottom: 15%;}
+
+#redes {margin-bottom: 5%; padding-top: 50px; padding-bottom: 30px; margin-left: 10%;}
+#icons {margin: 10px;}
